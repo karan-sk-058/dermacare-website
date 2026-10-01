@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — DermaCare by Indchemie</title>
+  <meta name="description" content="Join the DermaCare team. Explore open positions at DermaCare, a division of Indchemie Health Specialities Pvt. Ltd.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ─── Careers Page Specific ───── */
+    .careers-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, var(--green-accent) 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+    .careers-hero h1 { font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 16px; color: white; }
+    .careers-hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+
+    .careers-section { padding: 64px 0; }
+    .jobs-grid { display: flex; flex-direction: column; gap: 20px; max-width: 860px; margin: 0 auto; }
+
+    .job-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .job-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+    .job-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      cursor: pointer;
+      gap: 16px;
+    }
+    .job-header-left { flex: 1; }
+    .job-title { font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 6px; font-family: var(--font-heading); }
+    .job-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .job-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .tag-dept { background: var(--pink-light); color: var(--pink); }
+    .tag-type { background: var(--green-light); color: var(--green); }
+    .tag-location { background: var(--light-gray); color: var(--dark-gray); }
+
+    .job-toggle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+      transition: var(--transition);
+      flex-shrink: 0;
+      background: var(--cream);
+    }
+    .job-card.open .job-toggle { background: var(--pink); border-color: var(--pink); color: white; transform: rotate(45deg); }
+
+    .job-body {
+      display: none;
+      padding: 0 28px 28px;
+      border-top: 1px solid var(--border-light);
+      animation: fadeSlide 0.25s ease;
+    }
+    .job-card.open .job-body { display: block; }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .job-section { margin-top: 20px; }
+    .job-section h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+    .job-section ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .job-section ul li {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .job-section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--green-accent);
+      font-size: 0.8rem;
+    }
+
+    .job-body .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: #25D366;
+      color: white;
+      border-radius: var(--radius-xl);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .job-body .apply-btn:hover { background: #1fba58; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+    .job-body .apply-btn svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+
+    .no-jobs {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--dark-gray);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 2px dashed var(--border);
+    }
+    .no-jobs .icon { font-size: 3rem; margin-bottom: 16px; }
+    .no-jobs h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+    .no-jobs p { font-size: 0.9rem; }
+
+    .careers-cta {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      max-width: 860px;
+      margin: 32px auto 0;
+    }
+    .careers-cta h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .careers-cta p { font-size: 0.9rem; color: var(--dark-gray); margin-bottom: 16px; }
+
+    @media (max-width: 768px) {
+      .careers-hero h1 { font-size: 2rem; }
+      .careers-hero { padding: 60px 16px 40px; }
+      .job-header { padding: 18px 16px; }
+      .job-body { padding: 0 16px 20px; }
+      .job-title { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Banner -->
+  <div id="announcement-bar" style="display:none;"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span id="top-bar-message">Free shipping on orders over ₹500</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+919867254230" id="top-bar-phone">Customer Support: +91-9867254230</a>
+        <a href="#">Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="careers.html" class="active">Careers</a>
+      </nav>
+    </div>
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+    </a>
+    <div class="nav-right">
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="careers.html" class="active">Careers</a>
+  </div>
+
+  <!-- Careers Hero -->
+  <section class="careers-hero">
+    <div class="container">
+      <h1>Join Our Team 🌿</h1>
+      <p>Be part of a purpose-driven team building India's most trusted dermatology brand. Grow with DermaCare — a Division of Indchemie Health Specialities.</p>
+    </div>
+  </section>
+
+  <!-- Jobs Section -->
+  <section class="careers-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-label">We're Hiring</div>
+        <h2>Open Positions</h2>
+        <p>Click on any role to see details and apply directly via WhatsApp.</p>
+      </div>
+
+      <div class="jobs-grid" id="jobs-list">
+        <!-- Jobs are injected here by JavaScript from config.js -->
+      </div>
+
+      <div class="careers-cta">
+        <h3>Don't see a role that fits?</h3>
+        <p>We're always looking for talented people. Send us your resume and we'll keep you in mind for future openings.</p>
+        <a href="https://wa.me/919867254230?text=Hello%2C%20I%20am%20interested%20in%20working%20with%20DermaCare.%20Please%20find%20my%20resume%20attached." target="_blank" class="btn btn-primary" style="display:inline-flex; gap:8px; align-items:center;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.184 1.564 5.938l-1.662 6.076 6.221-1.632c1.701.927 3.655 1.455 5.733 1.455 6.627 0 12-5.373 12-12s-5.373-12-12-12zm0 22c-1.895 0-3.666-.546-5.161-1.484l-.369-.232-3.837 1.006 1.025-3.742-.254-.404c-.996-1.587-1.528-3.447-1.528-5.378 0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          Send Resume on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="padding: 0; margin-bottom: 16px;">
+            <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+          </a>
+          <p>Pioneering clinical skincare solutions backed by pharmaceutical research and trusted by healthcare professionals for over 50 years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.7;">
+            WhatsApp: +91-9867254230<br>
+            Mon-Sat 9AM-6PM IST
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 DermaCare. A Division of Indchemie Health Specialities Pvt. Ltd.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Close Cart">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">₹0.00</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;width:100%;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // ─── Render Jobs from config.js ─────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      renderJobs();
+    });
+
+    function renderJobs() {
+      const container = document.getElementById('jobs-list');
+      const jobs = (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.jobs) ? SITE_CONFIG.jobs : [];
+
+      if (jobs.length === 0) {
+        container.innerHTML = `
+          <div class="no-jobs">
+            <div class="icon">🌱</div>
+            <h3>No open positions right now</h3>
+            <p>Check back soon — we're growing fast! You can always send your resume below.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = jobs.map((job, i) => {
+        const deptTag = job.department ? `<span class="job-tag tag-dept">${job.department}</span>` : '';
+        const typeTag = job.type ? `<span class="job-tag tag-type">${job.type}</span>` : '';
+        const locTag  = job.location ? `<span class="job-tag tag-location">📍 ${job.location}</span>` : '';
+
+        const responsibilities = (job.responsibilities || []).map(r => `<li>${r}</li>`).join('');
+        const qualifications = (job.qualifications || []).map(q => `<li>${q}</li>`).join('');
+
+        // Build WhatsApp application message
+        const waMsg = encodeURIComponent(
+          `*JOB APPLICATION — DERMACARE*\n` +
+          `──────────────────\n\n` +
+          `*Position Applied For:* ${job.title}\n` +
+          `*Department:* ${job.department || 'N/A'}\n` +
+          `*Location:* ${job.location || 'N/A'}\n\n` +
+          `*Applicant Details:*\n` +
+          `• Name: \n` +
+          `• Phone: \n` +
+          `• Email: \n` +
+          `• Current Role: \n` +
+          `• Experience: \n\n` +
+          `Please review my application. I look forward to hearing from you!\n\n` +
+          `(Please attach your resume/CV)`
+        );
+        const waUrl = `https://wa.me/919867254230?text=${waMsg}`;
+
+        return `
+          <div class="job-card" id="job-${i}">
+            <div class="job-header" onclick="toggleJob(${i})">
+              <div class="job-header-left">
+                <div class="job-title">${job.title}</div>
+                <div class="job-tags">${deptTag}${typeTag}${locTag}</div>
+              </div>
+              <div class="job-toggle">+</div>
+            </div>
+            <div class="job-body">
+              ${job.overview ? `<p style="font-size:0.9rem;color:var(--text-light);margin-top:16px;line-height:1.65;">${job.overview}</p>` : ''}
+              ${responsibilities ? `
+                <div class="job-section">
+                  <h4>Key Responsibilities</h4>
+                  <ul>${responsibilities}</ul>
+                </div>` : ''}
+              ${qualifications ? `
+                <div class="job-section">
+                  <h4>Qualifications & Requirements</h4>
+                  <ul>${qualifications}</ul>
+                </div>` : ''}
+              <a href="${waUrl}" target="_blank" class="apply-btn">
+                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.184 1.564 5.938l-1.662 6.076 6.221-1.632c1.701.927 3.655 1.455 5.733 1.455 6.627 0 12-5.373 12-12s-5.373-12-12-12zm0 22c-1.895 0-3.666-.546-5.161-1.484l-.369-.232-3.837 1.006 1.025-3.742-.254-.404c-.996-1.587-1.528-3.447-1.528-5.378 0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Apply via WhatsApp
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleJob(i) {
+      const card = document.getElementById(`job-${i}`);
+      card.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

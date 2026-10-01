@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DermaCare - Science-Backed Skincare & Dermatological Formulations</title>
+  <meta name="description" content="DermaCare by Indchemie offers clinically tested, dermatologist-formulated skincare, tablets, creams, and lotions backed by 50+ years of pharmaceutical excellence.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       1. TOP BAR
+       ============================================ -->
+  <!-- Announcement Banner (controlled by config.js) -->
+  <div id="announcement-bar" style="display:none;"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span id="top-bar-message">Free shipping on orders over ₹500</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+919867254230" id="top-bar-phone">Customer Support: +91-9867254230</a>
+        <a href="#">Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       2. NAVBAR
+       ============================================ -->
+  <header class="navbar">
+    <div class="container">
+      <!-- nav-left: Navigation Links -->
+      <div class="nav-left">
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="shop.html">Shop</a>
+          <a href="contact.html">Contact</a>
+        <a href="careers.html">Careers</a>
+        </nav>
+      </div>
+
+      <!-- Center: Logo -->
+      <a href="index.html" class="logo" aria-label="DermaCare Home">
+        <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+      </a>
+
+      <!-- nav-right: Actions -->
+      <div class="nav-right">
+        <div class="nav-actions">
+          <a href="shop.html" class="nav-action-btn search-btn" aria-label="Search Products">🔍</a>
+          <button class="nav-action-btn cart-btn" onclick="toggleCart()" aria-label="View Shopping Cart">
+            🛒
+            <span class="cart-count">0</span>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       3. MOBILE NAV OVERLAY
+       ============================================ -->
+  <div class="mobile-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ============================================
+       4. HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <!-- Hero Content -->
+      <div class="hero-content fade-in-left">
+        <div class="hero-badge">Dermatologist Recommended</div>
+        <h1>Science-Backed <span class="highlight-pink">Skincare</span> for Every <span class="highlight-green">Skin Type</span></h1>
+        <p>Clinically formulated therapeutics and skincare solutions developed with pharmaceutical precision. Backed by 50+ years of healthcare innovation to restore, nourish, and protect your skin.</p>
+        <div class="hero-buttons">
+          <a href="shop.html" class="btn btn-primary">Shop Now</a>
+          <a href="about.html" class="btn btn-outline-green">Learn More</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>30+</h3>
+            <p>Products</p>
+          </div>
+          <div class="hero-stat">
+            <h3>50+</h3>
+            <p>Years Legacy</p>
+          </div>
+          <div class="hero-stat">
+            <h3>100%</h3>
+            <p>Dermatologist Tested</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual fade-in-right">
+        <div class="float-badge">
+          <div class="badge-icon">🧬</div>
+          <div class="badge-text">Clinically Tested</div>
+        </div>
+        <div class="float-badge">
+          <div class="badge-icon">🌱</div>
+          <div class="badge-text">Gentle on Skin</div>
+        </div>
+        <div class="hero-visual-card">
+          <div class="hero-visual-icon">🧴</div>
+          <div class="hero-visual-text">Clinically Proven Formulations</div>
+          <div class="hero-visual-subtitle">SINCE 1947</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. BRAND BAR
+       ============================================ -->
+  <section class="brand-bar">
+    <div class="container">
+      <div class="brand-bar-item"><span>🔬</span> Clinically Tested</div>
+      <div class="brand-bar-item"><span>🌿</span> Dermatologist Formulated</div>
+      <div class="brand-bar-item"><span>✨</span> Premium Quality</div>
+      <div class="brand-bar-item"><span>🛡️</span> Trusted Since 1947</div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. CATEGORIES SECTION
+       ============================================ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">EXPLORE</div>
+        <h2>Shop by Category</h2>
+        <p>Explore specialized dermatological formulations created with pharmaceutical grade ingredients for targeted skin wellness.</p>
+      </div>
+
+      <div class="categories-grid">
+        <a href="shop.html" class="category-card fade-in">
+          <div class="category-icon">💊</div>
+          <h3>Tablets & Capsules</h3>
+          <p>12 products</p>
+        </a>
+
+        <a href="shop.html" class="category-card fade-in">
+          <div class="category-icon">🧴</div>
+          <h3>Creams & Ointments</h3>
+          <p>7 products</p>
+        </a>
+
+        <a href="shop.html" class="category-card fade-in">
+          <div class="category-icon">💧</div>
+          <h3>Lotions</h3>
+          <p>5 products</p>
+        </a>
+
+        <a href="shop.html" class="category-card fade-in">
+          <div class="category-icon">✨</div>
+          <h3>Specialty Care</h3>
+          <p>6 products</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. FEATURED PRODUCTS SECTION
+       ============================================ -->
+  <section class="section-padding bg-pink-light">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">BESTSELLERS</div>
+        <h2>Featured Products</h2>
+        <p>Discover our most popular and scientifically validated dermatological therapies recommended by professionals.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="featured-carousel">
+          <!-- Dynamically populated by main.js with popular and new products -->
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <button class="carousel-btn carousel-prev" aria-label="Previous product">←</button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn carousel-next" aria-label="Next product">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       8. ABOUT PREVIEW SECTION
+       ============================================ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual Column -->
+        <div class="about-image fade-in-left">
+          <div class="about-image-icon">🏥</div>
+          <div class="about-image-text">Over 50 Years of Pharmaceutical Excellence</div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="about-content fade-in-right">
+          <div class="about-label">OUR STORY</div>
+          <h2>A Legacy of Dermatological Excellence</h2>
+          <p>DermaCare is proud to be a dedicated division of Indchemie Health Specialities Pvt. Ltd., carrying forward more than 50 years of pharmaceutical innovation and trust. Founded on rigorous scientific research, we combine proven clinical chemistry with skin-soothing bio-compatible botanicals.</p>
+          <p>Our state-of-the-art WHO-GMP certified facilities ensure every tablet, cream, lotion, and serum meets international quality standards. We bridge the gap between therapeutic dermatology and daily skincare, providing solutions trusted by thousands of doctors nationwide.</p>
+          
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🔬</div>
+              <div>
+                <h4>Clinical Research</h4>
+                <p>Formulations tested with strict clinical protocols</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature-icon">🌿</div>
+              <div>
+                <h4>Natural Ingredients</h4>
+                <p>Botanicals that soothe, protect, and restore</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature-icon">👨‍⚕️</div>
+              <div>
+                <h4>Expert Formulated</h4>
+                <p>Created by leading pharmacologists & doctors</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature-icon">💯</div>
+              <div>
+                <h4>Quality Assured</h4>
+                <p>Manufactured in certified WHO-GMP laboratories</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="about.html" class="btn btn-outline" style="margin-top: 32px;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       9. TESTIMONIALS SECTION
+       ============================================ -->
+  <section class="section-padding bg-green-light">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">TESTIMONIALS</div>
+        <h2>Trusted by Experts &amp; Patients</h2>
+        <p>Read real experiences from dermatologists and satisfied customers across India who rely on DermaCare every day.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"As a practicing dermatologist for over 15 years, I consistently prescribe DermaCare's Celidac and Finide range. The therapeutic consistency and patient tolerance are truly unmatched."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">PS</div>
+            <div>
+              <div class="testimonial-name">Dr. Priya Sharma</div>
+              <div class="testimonial-role">Consultant Dermatologist, Mumbai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Dispel Cream worked wonders for my hyperpigmentation. After trying several costly commercial brands with zero change, this pharmaceutical formula cleared my dark spots within four weeks."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RM</div>
+            <div>
+              <div class="testimonial-name">Rajesh Mehta</div>
+              <div class="testimonial-role">Verified Buyer, New Delhi</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Tuftina hair supplements delivered noticeable reduction in hair thinning. The science-backed ingredients give me confidence that I am feeding my follicles genuine nutrition."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AK</div>
+            <div>
+              <div class="testimonial-name">Ananya Kapoor</div>
+              <div class="testimonial-role">Verified Buyer, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       10. CTA BANNER
+       ============================================ -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>Ready to Transform Your Skincare Routine?</h2>
+      <p>Discover dermatological solutions engineered for radiant, resilient, and healthy skin. Shop our physician-recommended catalog today.</p>
+      <a href="shop.html" class="btn btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       11. FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="padding: 0; margin-bottom: 16px;">
+            <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+          </a>
+          <p>Pioneering clinical skincare solutions backed by pharmaceutical research and trusted by healthcare professionals for over 50 years.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="shop.html">Tablets</a></li>
+            <li><a href="shop.html">Creams</a></li>
+            <li><a href="shop.html">Lotions</a></li>
+            <li><a href="shop.html">Specialty Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe to receive dermatological skincare insights, expert advice, and exclusive updates directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing to DermaCare!'); this.reset();">
+            <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2024 DermaCare. A Division of Indchemie Health Specialities Pvt. Ltd.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       12. CART SIDEBAR & OVERLAY
+       ============================================ -->
+  <div class="cart-overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+  <div class="cart-sidebar" aria-label="Shopping Cart Sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items">
+      <!-- Populated dynamically by main.js updateCartUI() -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">₹0.00</span>
+      </div>
+      <a href="checkout.html" class="cart-checkout-btn" style="text-align: center; text-decoration: none; display: block;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       13. SCROLL-TO-TOP BUTTON
+       ============================================ -->
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

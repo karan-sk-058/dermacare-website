@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - DermaCare Skincare &amp; Dermatological Solutions</title>
+  <meta name="description" content="Explore DermaCare's complete range of dermatologist-recommended skincare solutions, tablets, creams, lotions, gels, ointments, and specialty therapies.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       1. TOP BAR
+       ============================================ -->
+  <!-- Announcement Banner (controlled by config.js) -->
+  <div id="announcement-bar" style="display:none;"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span id="top-bar-message">Free shipping on orders over ₹500</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+919867254230" id="top-bar-phone">Customer Support: +91-9867254230</a>
+        <a href="#">Track Order</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       2. NAVBAR
+       ============================================ -->
+  <header class="navbar">
+    <div class="container">
+      <!-- nav-left: Navigation Links -->
+      <div class="nav-left">
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="shop.html" class="active">Shop</a>
+          <a href="contact.html">Contact</a>
+        <a href="careers.html">Careers</a>
+        </nav>
+      </div>
+
+      <!-- Center: Logo -->
+      <a href="index.html" class="logo" aria-label="DermaCare Home">
+        <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+      </a>
+
+      <!-- nav-right: Actions -->
+      <div class="nav-right">
+        <div class="nav-actions">
+          <a href="shop.html" class="nav-action-btn search-btn" aria-label="Search Products">🔍</a>
+          <button class="nav-action-btn cart-btn" onclick="toggleCart()" aria-label="View Shopping Cart">
+            🛒
+            <span class="cart-count">0</span>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       3. MOBILE NAV OVERLAY
+       ============================================ -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ============================================
+       4. SHOP HEADER
+       ============================================ -->
+  <section class="shop-header">
+    <div class="container fade-in">
+      <h1>Our Products</h1>
+      <p>Explore our complete range of dermatologist-recommended skincare solutions.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. MAIN SHOP SECTION
+       ============================================ -->
+  <section class="section-padding-sm">
+    <div class="container">
+      <!-- Shop Toolbar -->
+      <div class="shop-toolbar fade-in">
+        <!-- Search Input -->
+        <div class="shop-search">
+          <span class="shop-search-icon" aria-hidden="true">🔍</span>
+          <input type="text" id="shop-search" placeholder="Search products..." aria-label="Search products">
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-pills" role="group" aria-label="Product categories">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="tablet">Tablets</button>
+          <button class="filter-pill" data-filter="cream">Creams</button>
+          <button class="filter-pill" data-filter="lotion">Lotions</button>
+          <button class="filter-pill" data-filter="gel">Gels</button>
+          <button class="filter-pill" data-filter="ointment">Ointments</button>
+          <button class="filter-pill" data-filter="specialty">Specialty</button>
+        </div>
+
+        <!-- Sort Select -->
+        <div class="shop-sort">
+          <select id="shop-sort" aria-label="Sort products">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Count -->
+      <p class="product-count" id="product-count">Showing <span>0</span> of <span>0</span> products</p>
+
+      <!-- Products Grid (Dynamically populated by main.js) -->
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. CTA BANNER
+       ============================================ -->
+  <section class="cta-banner">
+    <div class="container fade-in">
+      <h2>Can't find what you're looking for?</h2>
+      <p>Contact our team for assistance.</p>
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="padding: 0; margin-bottom: 16px;">
+            <div class="logo-icon"><img src="images/logo.png" alt="DermaCare Logo"></div>
+          </a>
+          <p>Pioneering clinical skincare solutions backed by pharmaceutical research and trusted by healthcare professionals for over 50 years.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social" aria-label="Instagram">📷</a>
+            <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="shop.html">Tablets</a></li>
+            <li><a href="shop.html">Creams</a></li>
+            <li><a href="shop.html">Lotions</a></li>
+            <li><a href="shop.html">Specialty Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe to receive dermatological skincare insights, expert advice, and exclusive updates directly in your inbox.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing to DermaCare!'); this.reset();">
+            <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2024 DermaCare. A Division of Indchemie Health Specialities Pvt. Ltd.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       8. CART SIDEBAR & OVERLAY
+       ============================================ -->
+  <div class="cart-overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+  <div class="cart-sidebar" aria-label="Shopping Cart Sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" onclick="toggleCart()" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items">
+      <!-- Populated dynamically by main.js updateCartUI() -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">₹0.00</span>
+      </div>
+      <a href="checkout.html" class="cart-checkout-btn" style="text-align: center; text-decoration: none; display: block;">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       9. SCROLL-TO-TOP BUTTON
+       ============================================ -->
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- ============================================
+       SCRIPTS
+       ============================================ -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
